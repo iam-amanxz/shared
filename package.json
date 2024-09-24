@@ -1,0 +1,28 @@
+{
+  "name": "mathlibs",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.2"
+  },
+  "scripts": {
+    "lint": "tsc",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "build": "tsup",
+    "dev": "tsup --watch"
+  }
+}
